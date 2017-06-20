@@ -14,8 +14,6 @@ RUN apk upgrade --update && \
     gunzip /tmp/apache-tomcat.tar.gz && \
     tar -C /opt -xf /tmp/apache-tomcat.tar && \
     ln -s /opt/apache-tomcat-${TOMCAT_VERSION} ${TOMCAT_HOME} && \
-    rm -rf ${TOMCAT_HOME}/webapps/* && \
-    apk del curl && \
     rm -rf /tmp/* /var/cache/apk/*
 
 COPY logging.properties ${TOMCAT_HOME}/conf/logging.properties
